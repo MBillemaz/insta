@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  load_more: "Load more images..."
   hello: "Hello world"
