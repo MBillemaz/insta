@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :images, :through => :image_user
   has_many :likes
+  validates_presence_of :first_name, :last_name, :email
+  
 end
