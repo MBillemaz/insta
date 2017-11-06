@@ -1,0 +1,21 @@
+.container
+  .row
+    .top
+      .col-xs-2
+        %h1.title
+          %a{href: root_path, class: "imageHeader"}
+            = image_tag "ynov.png"
+      .pull-right{style: "display: flex"}
+        - if user_signed_in?
+          = link_to "Se connecter", destroy_user_session_path, :method => :delete, class: "logout"
+          = link_to "Mon compte", account_user_index_path, class: "my-account"
+
+        - else
+          = link_to "Inscription", new_user_session_path, class: "my-account"
+        -# - if user_signed_in?
+        -#   = button_to t("create_listing"), new_listing_path, class: "btn btn-success", method: :get
+        -# - else
+        -#   = button_to t("create_listing"), new_user_session_path, class: "btn btn-success", method: :get
+
+        -#   -if current_user.is_admin?
+        -#     =link_to "Admin", rails_admin_path, class: "my-account"
