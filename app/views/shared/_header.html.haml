@@ -1,10 +1,14 @@
 .container
   .row
     .top
-      .col-xs-2
+      .col-xs-5{style: "display: flex; flex-direction: row"}
         %h1.title
           %a{href: root_path, class: "imageHeader"}
             = image_tag "ynov.png"
+
+        - Category.all.each do |t|
+          = link_to t.name, image_by_category_path(t.id), class: "CategoryButton"
+
       .pull-right{style: "display: flex"}
         - if user_signed_in?
           = link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "logout"
