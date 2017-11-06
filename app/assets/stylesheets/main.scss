@@ -23,6 +23,20 @@
   color: #FFFFFF;
   width: 50%;
 }
+.like{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url(asset_path("nolike.png"));
+}
+
+.active
+{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url(asset_path("like.png"));
+}
 
 body {
     background-color: #fff;

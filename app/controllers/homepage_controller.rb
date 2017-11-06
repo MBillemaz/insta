@@ -1,7 +1,10 @@
 class HomepageController < ApplicationController
 
   def index
-    @images = Image.filter(params)
+      @current_user = current_user
+      
+    @images = Image.all
+
 
     respond_to do |format|
       format.html
