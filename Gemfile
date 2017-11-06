@@ -41,6 +41,22 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+group :test do
+  gem 'launchy'
+  gem 'minitest'
+  gem 'minitest-focus'
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-matchers'
+  gem 'minitest-metadata'
+  gem 'minitest-profiler'
+  gem 'capybara-email'
+  gem 'warden'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'tzinfo-data'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
