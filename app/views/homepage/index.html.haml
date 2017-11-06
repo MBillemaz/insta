@@ -1,4 +1,16 @@
-.row
-  .col-xs-8.col-xs-offset-2.search
-    %h2 Home
-    
+- @images.each do |image|
+  .container-fluid
+    .row
+      .col-md-4
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .col-md-4
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .col-md
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+    .row
+      .col-md-4
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .col-md-4
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .col-md
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
