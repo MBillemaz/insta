@@ -1,10 +1,16 @@
 class HomepageController < ApplicationController
-    
-      def index
-      end
-    
-      def show
-            @images = Image.filter(params)
-      end
+
+  def index
+    @images = Image.filter(params)
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @listings.to_json }
+    end
+  end
+
+  def show
+    @images = Image.filter(params)
+  end
+
 end
-    

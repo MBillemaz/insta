@@ -1,4 +1,16 @@
-.row
-  .col-xs-8.col-xs-offset-2.search
-    %h2 Home
-    
+- @images.each do |image|
+  .image
+    .container-fluid.imageContainer
+      .row
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .imageOverlay
+        .col-md-2.heartClass
+          = image_tag "like.png"
+        .col-md
+          = image.user.first_name
+        .col-md-2
+          100
+        .col-md
+          Tag tag tag
+
+= link_to t('load_more'), '#', style: 'color:#000;'

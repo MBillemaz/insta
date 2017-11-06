@@ -6,6 +6,15 @@ class Image < ApplicationRecord
     has_many :likes
     mount_uploader :picture, PictureUploader
 
+    THUMBNAIL_URL = "http://www.latorredelsol.com/press/components/com_easyblog/themes/wireframe/images/placeholder-image.png"
+
+    def thumbnail
+      out = picture.url
+      out = THUMBNAIL_URL unless picture.url
+
+      out
+    end
+
     def self.filter(args)
         case args
         when args[:category_id].present?
@@ -17,6 +26,6 @@ class Image < ApplicationRecord
         else
             return Image.all
         end
+    end
 
-    end 
 end
