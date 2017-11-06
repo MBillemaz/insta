@@ -215,3 +215,21 @@ body {
     width: 45%;
     height: auto  ;
   }
+
+  .checkGroup{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkBox{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .checkBox input{
+    margin-right: 2%;
+  }
+
+  .form-group{
+    text-align: center;
+  }
