@@ -1,12 +1,10 @@
 class HomepageController < ApplicationController
 
   def index
-    @images = Image.search(params)
+  end
 
-    respond_to do |format|
-      format.html
-      format.json { render :json => @images.to_json }
-    end
+  def show
+    @images = Image.filter(params)
   end
 
 end

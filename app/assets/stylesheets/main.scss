@@ -36,10 +36,7 @@ body {
     background-color: rgba(43, 62, 80, 0.8);
     z-index: 100;
   }
-  .imageHeader img{
-      width: 60%;
-      height: auto;
-    }
+
   
   .content {
     padding-top: 80px;
@@ -199,4 +196,22 @@ body {
   }
   .table a:not(.btn), .table a:not(.btn){
     color: black;
+  }
+
+  .CategoryButton {
+    border: none;
+    margin-left: 4%;
+    color: white;
+    margin-top: 2%;
+    font-size: 25px;
+  }  
+
+  .CategoryButton :hover{
+    text-decoration: underline;
+    color: white;
+  }
+  
+  .imageHeader img{
+    width: 45%;
+    height: auto  ;
   }

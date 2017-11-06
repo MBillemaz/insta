@@ -1,16 +1,15 @@
 - @images.each do |image|
-  .container-fluid
-    .row
-      .col-md-4
+  .image
+    .container-fluid
+      .row
         = image_tag image.thumbnail, width: 300, class: 'img-responsive'
-      .col-md-4
-        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
-      .col-md
-        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
-    .row
-      .col-md-4
-        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
-      .col-md-4
-        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
-      .col-md
-        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .row
+        .col-md-2
+          Coeur
+        .col-md
+          Image name
+      .row
+        .col-md-2
+          100
+        .col-md
+          Tag tag tag
