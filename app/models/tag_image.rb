@@ -1,4 +1,4 @@
-class Tag_image < ApplicationRecord
+class TagImage < ApplicationRecord
     belongs_to :tag
     belongs_to :image
 end

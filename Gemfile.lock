@@ -252,7 +252,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   capybara-email
-  carrierwave (~> 1.0)
+  carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise

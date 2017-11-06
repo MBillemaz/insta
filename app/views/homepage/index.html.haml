@@ -1,18 +1,16 @@
 - @images.each do |image|
   .image
-    .container-fluid
+    .container-fluid.imageContainer
       .row
         = image_tag image.thumbnail, width: 300, class: 'img-responsive'
       .imageOverlay
-        .row
-          .col-md-2
-            heart
-          .col-md
-            user image
-        .row
-          .col-md-2
-            100
-          .col-md
-            Tag tag tag
+        .col-md-2.heartClass
+          = image_tag "like.png"
+        .col-md
+          = image.user.first_name
+        .col-md-2
+          100
+        .col-md
+          Tag tag tag
 
 = link_to t('load_more'), '#', style: 'color:#000;'

@@ -1,0 +1,19 @@
+.row
+  
+  .col-xs-8.col-xs-offset-2.well
+    
+    = form_for @image, url: upload_index_path, class: 'form', html: {multipart: true} do |f|
+      .form-group
+        %h1 Uploader une image
+        %select{name: "image[category_id]"}
+          - Category.all.each do |c|
+            %option{value: c.id}= c.name
+
+        .checkGroup 
+          - Tag.all.each do |t|
+            .checkBox
+              %input{type: "checkbox", name: "tag", value: t.id}= t.name
+
+        = f.file_field :picture
+      .form-group
+        = f.submit "Upload", class: 'btn btn-primary pull-right'

@@ -1,9 +1,10 @@
 class Image < ApplicationRecord
-  has_many :users, :through => :image_user
-  belongs_to :category
-  has_many :tag, :through => :tag_image
-  has_many :likes
-  mount_uploader :picture, PictureUploader
+    belongs_to :user
+    belongs_to :category
+    has_many :tab_image
+    has_many :tag, :through => :tag_image
+    has_many :likes
+    mount_uploader :picture, PictureUploader
 
     THUMBNAIL_URL = "http://www.latorredelsol.com/press/components/com_easyblog/themes/wireframe/images/placeholder-image.png"
 

@@ -11,11 +11,13 @@
 
       .pull-right{style: "display: flex"}
         - if user_signed_in?
-          = link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "logout"
-          = link_to "Mon compte", edit_user_registration_path, class: "my-account"
+          = link_to "Uploader une image", new_upload_path
+          -# = link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "logout"
+          -# = link_to "Mon compte", edit_user_registration_path, class: "my-account"
 
         - else
           = link_to "Connexion", new_user_session_path, class: "my-account"
+          = link_to "Inscription", new_user_registration_path, class: "my-account"
         -# - if user_signed_in?
         -#   = button_to t("create_listing"), new_listing_path, class: "btn btn-success", method: :get
         -# - else

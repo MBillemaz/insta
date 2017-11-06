@@ -3,16 +3,25 @@
     color: black
 }
 
+.imageContainer{
+  display: inline-block;
+  position: relative;
+}
+
 .imageOverlay {
-  background: rgba(0, 0, 0, .5);
-  float: left;
-  margin-top: -50px;
-  margin-left: -15px;
-  overflow: visible;
   position: absolute;
-  height: 50px;
-  width: 300px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageOverlay div {
   color: #FFFFFF;
+  width: 50%;
 }
 
 body {
@@ -226,4 +235,22 @@ body {
   .imageHeader img{
     width: 45%;
     height: auto  ;
+  }
+
+  .checkGroup{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkBox{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .checkBox input{
+    margin-right: 2%;
+  }
+
+  .form-group{
+    text-align: center;
   }

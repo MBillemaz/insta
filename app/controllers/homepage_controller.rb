@@ -1,7 +1,7 @@
 class HomepageController < ApplicationController
 
   def index
-    @images = Image.filter(params).limit(5).order('id asc')
+    @images = Image.filter(params).limit(6)
 
     respond_to do |format|
       format.html
