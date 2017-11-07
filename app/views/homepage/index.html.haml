@@ -5,12 +5,15 @@
         = image_tag image.thumbnail, width: 300, class: 'img-responsive'
       .imageOverlay
         .col-md-2.heartClass
-          = image_tag "like.png"
+          - if current_user
+            %a{href: '#', class: "like #{'active' if current_user.voted_for? image}", data: {do: 'like', id: image.id}}
+          -else 
+            = link_to image_tag("nolike.png"), new_user_session_path
         .col-md
           = image.user.first_name
-        .col-md-2
-          100
+        .col-md-2{data: {nbr: image.id}}= 0
         .col-md
           Tag tag tag
 
 = link_to t('load_more'), '#', style: 'color:#000;'
+

@@ -41,7 +41,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-
+  gem 'acts_as_votable', '~> 0.11.1'
+  gem 'jquery-rails'
   gem 'carrierwave'
 end
 
