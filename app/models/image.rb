@@ -1,8 +1,8 @@
 class Image < ApplicationRecord
     belongs_to :user
     belongs_to :category
-    has_many :tab_image
-    has_many :tag, :through => :tag_image
+    has_many :tag_images
+    has_many :tags, :through => :tag_images
     has_many :likes
     mount_uploader :picture, PictureUploader
     attr_accessor :liked
@@ -22,9 +22,11 @@ class Image < ApplicationRecord
         if args[:category_id].present?
             out = Image.where(["category_id = ?",args[:category_id]])
         elsif args[:image_id].present?
-            out = Image.where(["image_id = ?",args[:image_id]])
+            out = Image.where(["id = ?",args[:image_id]])
         elsif args[:tag_id].present?
-            out = Image.where(["tag_id = ?",args[:tag_id]])       
+            out = Image.joins(:tag_images).where(["tag_id = ?",args[:tag_id]])       
+        elsif args[:user_id].present?
+            out = Image.where(["user_id = ?",args[:user_id]])       
         else
             out = Image.all     
         end

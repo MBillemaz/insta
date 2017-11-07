@@ -10,11 +10,12 @@
           -else 
             = link_to image_tag("nolike.png"), new_user_session_path
         .col-md
-          = image.user.first_name
+          = link_to image.user.first_name, image_by_user_path(image.user.id)
         .col-md-2{class: "NbLike", data: {nbr: image.id}}
           = image.get_likes.size
         .col-md
-          Tag tag tag
+          - image.tags.each do |tag|
+            = link_to tag.name, image_by_tag_path(tag.id)
 
 :javascript 
-  window.last = "#{@images.last.id}"
+    window.last = "#{@images.last.id}"
