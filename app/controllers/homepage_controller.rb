@@ -7,6 +7,10 @@ class HomepageController < ApplicationController
     render partial: "homepage/image" if request.xhr?
   end
 
+  def show
+    @image = Image.find(params[:image_id])
+  end
+
 
 
 end
