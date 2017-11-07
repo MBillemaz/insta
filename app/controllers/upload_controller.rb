@@ -7,7 +7,6 @@ class UploadController < ApplicationController
       def create
         @image = Image.new(image_params)
         if @image.save
-          @image.errors.full_messages
           redirect_to root_path
         else
           render template: '/upload/new'
@@ -20,6 +19,7 @@ class UploadController < ApplicationController
               .permit(
                 :category_id,
                 :picture,
+                tag_ids: []
               ).merge(user_id: current_user.id)
       end
 end

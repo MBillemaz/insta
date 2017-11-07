@@ -1,13 +1,13 @@
 class Image < ApplicationRecord
     belongs_to :user
     belongs_to :category
-    has_many :tab_image
+    has_many :tag_image
     has_many :tag, :through => :tag_image
     has_many :likes
     mount_uploader :picture, PictureUploader
     attr_accessor :liked
     acts_as_votable
-   
+
     THUMBNAIL_URL = "http://www.latorredelsol.com/press/components/com_easyblog/themes/wireframe/images/placeholder-image.png"
 
     def thumbnail
