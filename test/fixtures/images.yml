@@ -1,2 +1,89 @@
-imageInvalidUrl:
+image1:
+  id: 1
   picture:
+  user_id: 1
+  category_id: 1
+
+image2:
+  id: 2
+  picture:
+  user_id: 1
+  category_id: 1
+
+image3:
+  id: 3
+  picture:
+  user_id: 1
+  category_id: 1
+
+image4:
+  id: 4
+  picture:
+  user_id: 1
+  category_id: 2
+
+image5:
+  id: 5
+  picture:
+  user_id: 1
+  category_id: 2
+
+image6:
+  id: 6
+  picture:
+  user_id: 1
+  category_id: 2
+
+image7:
+  id: 7
+  picture:
+  user_id: 1
+  category_id: 3
+
+image8:
+  id: 8
+  picture:
+  user_id: 1
+  category_id: 3
+
+image9:
+  id: 9
+  picture:
+  user_id: 1
+  category_id: 3
+
+image10:
+  id: 10
+  picture:
+  user_id: 2
+  category_id: 4
+
+image11:
+  id: 11
+  picture:
+  user_id: 2
+  category_id: 4
+
+image12:
+  id: 12
+  picture:
+  user_id: 2
+  category_id: 4
+
+image13:
+  id: 13
+  picture:
+  user_id: 2
+  category_id: 5
+
+image14:
+  id: 14
+  picture:
+  user_id: 2
+  category_id: 5
+
+image15:
+  id: 15
+  picture:
+  user_id: 2
+  category_id: 5

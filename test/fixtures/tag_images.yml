@@ -1,0 +1,103 @@
+tag_images1A:
+  image_id: 1
+  tag_id: 1
+
+tag_images1B:
+  image_id: 1
+  tag_id: 2
+
+tag_images1C:
+  image_id: 1
+  tag_id: 3
+
+tag_images2A:
+  image_id: 2
+  tag_id: 1
+
+tag_images3A:
+  image_id: 3
+  tag_id: 1
+
+tag_images4A:
+  image_id: 4
+  tag_id: 2
+
+tag_images4B:
+  image_id: 4
+  tag_id: 3
+
+tag_images5A:
+  image_id: 5
+  tag_id: 2
+
+tag_images5B:
+  image_id: 5
+  tag_id: 3
+
+tag_images6A:
+  image_id: 6
+  tag_id: 1
+
+tag_images7A:
+  image_id: 7
+  tag_id: 1
+
+tag_images8A:
+  image_id: 8
+  tag_id: 1
+
+tag_images8B:
+  image_id: 8
+  tag_id: 4
+
+tag_images8C:
+  image_id: 8
+  tag_id: 5
+
+tag_images9A:
+  image_id: 9
+  tag_id: 1
+
+tag_images10A:
+  image_id: 10
+  tag_id: 1
+
+tag_images10B:
+  image_id: 10
+  tag_id: 2
+
+tag_images11A:
+  image_id: 11
+  tag_id: 1
+
+tag_images12A:
+  image_id: 12
+  tag_id: 1
+
+tag_images13A:
+  image_id: 13
+  tag_id: 1
+
+tag_images14A:
+  image_id: 14
+  tag_id: 1
+
+tag_images14B:
+  image_id: 14
+  tag_id: 2
+
+tag_images14C:
+  image_id: 14
+  tag_id: 3
+
+tag_images14D:
+  image_id: 14
+  tag_id: 4
+
+tag_images14E:
+  image_id: 14
+  tag_id: 5
+
+tag_images15A:
+  image_id: 15
+  tag_id: 1

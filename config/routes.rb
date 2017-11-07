@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  devise_for :models
+
   root to: "homepage#index"
 
   get '/users/:user_id', to: 'homepage#index', as: 'image_by_user'

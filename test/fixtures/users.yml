@@ -1,0 +1,9 @@
+user1:
+  first_name: 'firstNameUser1'
+  last_name: 'lastNameUser1'
+  email: "user1@domain.com"
+
+user2:
+  first_name: 'firstNameUser2'
+  last_name: 'lastNameUser2'
+  email: "user2@domain.com"

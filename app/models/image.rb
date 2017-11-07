@@ -1,13 +1,17 @@
 class Image < ApplicationRecord
+  mount_uploader :picture, PictureUploader
+
     belongs_to :user
     belongs_to :category
     has_many :tag_images
     has_many :tags, :through => :tag_images
     has_many :likes
-    mount_uploader :picture, PictureUploader
+
     attr_accessor :liked
     acts_as_votable
-   
+
+    validates_presence_of :picture
+
     THUMBNAIL_URL = "http://www.latorredelsol.com/press/components/com_easyblog/themes/wireframe/images/placeholder-image.png"
 
     def thumbnail
@@ -24,11 +28,11 @@ class Image < ApplicationRecord
         elsif args[:image_id].present?
             out = Image.where(["id = ?",args[:image_id]])
         elsif args[:tag_id].present?
-            out = Image.joins(:tag_images).where(["tag_id = ?",args[:tag_id]])       
+            out = Image.joins(:tag_images).where(["tag_id = ?",args[:tag_id]])
         elsif args[:user_id].present?
-            out = Image.where(["user_id = ?",args[:user_id]])       
+            out = Image.where(["user_id = ?",args[:user_id]])
         else
-            out = Image.all     
+            out = Image.all
         end
 
         if args[:last_id].present?
