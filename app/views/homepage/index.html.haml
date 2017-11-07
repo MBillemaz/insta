@@ -7,14 +7,14 @@
         .col-md-2.heartClass
           - if current_user
             %a{href: '#', class: "like #{'active' if current_user.voted_for? image}", data: {do: 'like', id: image.id}}
-          -else 
+          -else
             = link_to image_tag("nolike.png"), new_user_session_path
         .col-md
           = image.user.first_name
         .col-md-2{class: "NbLike", data: {nbr: image.id}}
           = image.get_likes.size
         .col-md
-          Tag tag tag
+          - image.tags.each do |tag|
+            = link_to tag.name, image_by_tag_path(tag.id)
 
 = link_to t('load_more'), '#', style: 'color:#000;'
-
