@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/users/:user_id', to: 'homepage#show', as: 'image_by_user'
   get '/categories/:category_id', to: 'homepage#show', as: 'image_by_category'
-  get '/tags/:tag_id', to: 'homapage#show', as: 'image_by_tag'
+  get '/tags/:tag_id', to: 'homepage#show', as: 'image_by_tag'
   post '/like', to: 'like#like', as: 'like_image'
   post '/unlike', to: 'like#unlike', as: 'unlike_image'
   resources :upload, only: [:new, :create]
