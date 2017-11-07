@@ -11,7 +11,8 @@
             = link_to image_tag("nolike.png"), new_user_session_path
         .col-md
           = image.user.first_name
-        .col-md-2{data: {nbr: image.id}}= 0
+        .col-md-2{class: "NbLike", data: {nbr: image.id}}
+          = image.get_likes.size
         .col-md
           Tag tag tag
 

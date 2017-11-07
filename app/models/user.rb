@@ -11,7 +11,7 @@ class User < ApplicationRecord
   
 
   def toggleLike(image_id)
-    out = {}
+    out = {image_id: image_id}
     image = Image.find(image_id)
     if voted_for? image
       unlike image

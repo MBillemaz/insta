@@ -16,8 +16,7 @@ $(document).on('turbolinks:load', function() {
               else{
                   $(that).removeClass("active");
               }
-              $(that).parent().parent().attr('data-nbr').text(data.number)
-              //$("imageNb-"+$(that).data('id')).text(data.number);
+              $('*[data-nbr="'+ data.image_id +'"]').text(data.number);
             }
           });
     })
