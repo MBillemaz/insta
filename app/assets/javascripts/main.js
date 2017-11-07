@@ -1,6 +1,6 @@
 window.last = null; 
 $(document).on('turbolinks:load', function() { 
-
+    
     $("body").on('click'," [data-do='like']",function (e) {
         e.preventDefault();
         var that = this;

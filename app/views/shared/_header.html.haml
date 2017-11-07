@@ -1,4 +1,4 @@
-.container
+.container-fluid
   .row
     .top
       .col-xs-5{style: "display: flex; flex-direction: row"}
@@ -9,20 +9,17 @@
         - Category.all.each do |t|
           = link_to t.name, image_by_category_path(t.id), class: "CategoryButton"
 
-      .pull-right{style: "display: flex"}
+      .col-xs-6{style: "display: flex; flex-direction: row; justify-content: space-between; margin-top: 10px;"}
+
+        = form_tag search_image_path, :class => "SearchBar", :method => :get do
+          = text_field_tag :search, nil, :class => "form-control", :placeholder => "Search"
+
         - if user_signed_in?
           = link_to "Uploader une image", new_upload_path
-          = link_to t('logout'), destroy_user_session_path, :method => :delete, class: "logout"
-          -# = link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "logout"
-          -# = link_to "Mon compte", edit_user_registration_path, class: "my-account"
+          = link_to "", image_by_user_path(current_user.id), :method => :get, class: "glyphicon glyphicon-home"
+          = link_to "", destroy_user_session_path, :method => :delete, class: "glyphicon glyphicon-remove"
 
         - else
           = link_to "Connexion", new_user_session_path, class: "my-account"
           = link_to "Inscription", new_user_registration_path, class: "my-account"
-        -# - if user_signed_in?
-        -#   = button_to t("create_listing"), new_listing_path, class: "btn btn-success", method: :get
-        -# - else
-        -#   = button_to t("create_listing"), new_user_session_path, class: "btn btn-success", method: :get
-
-        -#   -if current_user.is_admin?
-        -#     =link_to "Admin", rails_admin_path, class: "my-account"
+       

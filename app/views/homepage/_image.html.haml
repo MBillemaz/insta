@@ -1,21 +1,33 @@
-- @images.each do |image|
-  .image
-    .container-fluid.imageContainer
-      .row
-        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
-      .imageOverlay
-        .col-md-2.heartClass
-          - if current_user
-            %a{href: '#', class: "like #{'active' if current_user.voted_for? image}", data: {do: 'like', id: image.id}}
-          -else 
-            = link_to image_tag("nolike.png"), new_user_session_path
-        .col-md
-          = link_to image.user.first_name, image_by_user_path(image.user.id)
-        .col-md-2{class: "NbLike", data: {nbr: image.id}}
-          = image.get_likes.size
-        .col-md
-          - image.tags.each do |tag|
-            = link_to tag.name, image_by_tag_path(tag.id)
+- if @images.count != 0
+  - @images.each do |image|
+    .image
+      .container-fluid.imageContainer
+        .row
+          = link_to image_tag(image.thumbnail, width: 375, class: 'img-responsive'), image_path(image.id)
+        .imageOverlay
+          .col-md-2.heartClass
+            - if current_user
+              -# -if current_user.voted_for? image
+              -#   =link_to heart('red'), "#", data: {do: 'like', id: image.id}
+              -# -else 
+              -#   =link_to heart('black'), "#", data: {do: 'like', id: image.id}
+              %a{href: '#', class: "like #{'active' if current_user.voted_for? image}", data: {do: 'like', id: image.id}}
+            -else 
+              = link_to image_tag("nolike.png"), new_user_session_path
+          .col-md
+            = link_to image.user.first_name, image_by_user_path(image.user.id)
+          .col-md-2{class: "NbLike", data: {nbr: image.id}}
+            = image.get_likes.size
+          .col-md
+            - image.tags.each do |tag|
+              = link_to tag.name, image_by_tag_path(tag.id)
 
-:javascript 
-    window.last = "#{@images.last.id}"
+  :javascript 
+    if ("#{@images.last}" != "#{nil}"){
+      window.last = "#{@images.last.try(:id)}"
+    }
+    else{
+      window.last = 0
+    }
+- else 
+  .Error= "Aucune image trouvée"

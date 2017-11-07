@@ -1,4 +1,6 @@
 .imagesContainer
   =render partial: "homepage/image"
 
-= link_to "Plus d'image", request.url, style: 'color:#000;', data: {do: "more", last: @images.last.id}
+- if @images.count != 0  
+  = link_to "Plus d'image", request.url, style: 'color:#000;', data: {do: "more", last: @images.last.id}
+
