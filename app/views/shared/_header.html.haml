@@ -12,6 +12,7 @@
       .pull-right{style: "display: flex"}
         - if user_signed_in?
           = link_to "Uploader une image", new_upload_path
+          = link_to t('logout'), destroy_user_session_path, :method => :delete, class: "logout"
           -# = link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "logout"
           -# = link_to "Mon compte", edit_user_registration_path, class: "my-account"
 

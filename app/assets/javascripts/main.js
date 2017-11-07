@@ -20,4 +20,9 @@ $(document).on('turbolinks:load', function() {
             }
           });
     })
+
+    $(document).on('click'," [data-do='like']",function (e) {
+        e.preventDefault();
+        var that = this;
+    })
 })

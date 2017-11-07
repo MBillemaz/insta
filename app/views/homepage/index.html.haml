@@ -16,5 +16,5 @@
         .col-md
           Tag tag tag
 
-= link_to t('load_more'), '#', style: 'color:#000;'
+= link_to "Plus d'image", root_path, style: 'color:#000;', data: {do: "more", page:@page}
 
