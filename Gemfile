@@ -30,10 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'devise'
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'haml-rails'
 gem 'carrierwave'
+gem 'acts_as_votable'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -41,8 +43,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'acts_as_votable', '~> 0.11.1'
-  gem 'jquery-rails'
   gem 'carrierwave'
 end
 

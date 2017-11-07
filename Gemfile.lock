@@ -253,7 +253,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  acts_as_votable (~> 0.11.1)
+  acts_as_votable
   bcrypt!
   byebug
   capybara (~> 2.13)
