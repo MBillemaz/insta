@@ -19,7 +19,7 @@ class UploadController < ApplicationController
               .permit(
                 :category_id,
                 :picture,
+                tag_ids: []
               ).merge(user_id: current_user.id)
       end
 end
-    

@@ -1,7 +1,7 @@
 .row
-  
+
   .col-xs-8.col-xs-offset-2.well
-    
+
     = form_for @image, url: upload_index_path, class: 'form', html: {multipart: true} do |f|
       .form-group
         %h1 Uploader une image
@@ -9,10 +9,10 @@
           - Category.all.each do |c|
             %option{value: c.id}= c.name
 
-        .checkGroup 
-          - Tag.all.each do |t|
-            .checkBox
-              %input{type: "checkbox", name: "tag", value: t.id}= t.name
+        .checkGroup
+          - Tag.all.each do |tag|
+            = check_box_tag "image[tag_ids][]", tag.id
+            = tag.name
 
         = f.file_field :picture
       .form-group
