@@ -1,0 +1,20 @@
+- @images.each do |image|
+  .image
+    .container-fluid.imageContainer
+      .row
+        = image_tag image.thumbnail, width: 300, class: 'img-responsive'
+      .imageOverlay
+        .col-md-2.heartClass
+          - if current_user
+            %a{href: '#', class: "like #{'active' if current_user.voted_for? image}", data: {do: 'like', id: image.id}}
+          -else 
+            = link_to image_tag("nolike.png"), new_user_session_path
+        .col-md
+          = image.user.first_name
+        .col-md-2{class: "NbLike", data: {nbr: image.id}}
+          = image.get_likes.size
+        .col-md
+          Tag tag tag
+
+:javascript 
+  window.last = "#{@images.last.id}"

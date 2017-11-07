@@ -1,5 +1,8 @@
-$(document).on('turbolinks:load', function() {
-    $(document).on('click'," [data-do='like']",function (e) {
+
+
+$(document).on('turbolinks:load', function() { 
+    window.last = null; 
+    $("body").on('click'," [data-do='like']",function (e) {
         e.preventDefault();
         var that = this;
         $.ajax({
@@ -9,7 +12,6 @@ $(document).on('turbolinks:load', function() {
                 image_id: $(that).data('id')
             },
             success:function(data){
-                console.log(data);
               if(data.klass == "active"){
                   $(that).addClass(data.klass);
               }
@@ -21,8 +23,23 @@ $(document).on('turbolinks:load', function() {
           });
     })
 
-    $(document).on('click'," [data-do='like']",function (e) {
+    $("body").on('click'," [data-do='more']",function (e) {
         e.preventDefault();
         var that = this;
+        var ref = $(that).attr('href');
+        $.ajax({
+            type:"GET",
+            url: ref,
+            data: {
+                last_id: window.last
+            },
+            success: function(data){
+                $(".imagesContainer").append(data);
+            },
+            error: function(){
+                $("[data-do='more']").hide();
+            }
+        })
     })
 })
+// $(div).html = data.response

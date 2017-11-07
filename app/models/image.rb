@@ -18,16 +18,22 @@ class Image < ApplicationRecord
     end
 
     def self.filter(args)
-        case args
-        when args[:category_id].present?
-            return Image.where({category_id: args[:category_id]})
-        when args[:image_id].present?
-            return Image.where({image_id: args[:image_id]})
-        when args[:tag_id].present?
-            return Image.where({tag_id: args[:tag_id]})
+        out = []
+        if args[:category_id].present?
+            out = Image.where(["category_id = ?",args[:category_id]])
+        elsif args[:image_id].present?
+            out = Image.where(["image_id = ?",args[:image_id]])
+        elsif args[:tag_id].present?
+            out = Image.where(["tag_id = ?",args[:tag_id]])       
         else
-            return Image.all
+            out = Image.all     
         end
+
+        if args[:last_id].present?
+            out = out.where("id > ?", args[:last_id])
+        end
+
+        return out.limit(6)
     end
 
 end
