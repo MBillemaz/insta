@@ -17,4 +17,4 @@
           - image.tags.each do |tag|
             = link_to tag.name, image_by_tag_path(tag.id)
 
-= link_to t('load_more'), '#', style: 'color:#000;'
+= link_to "Plus d'image", root_path, style: 'color:#000;', data: {do: "more", page:@page}

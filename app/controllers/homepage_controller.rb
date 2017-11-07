@@ -3,8 +3,8 @@ class HomepageController < ApplicationController
   def index
 
     @current_user = current_user
-    @images = Image.all
-    # @images = Image.filter(params).limit(6)
+    @page = 1
+    @images = Image.limit(6);
 
     respond_to do |format|
       format.html
@@ -14,6 +14,12 @@ class HomepageController < ApplicationController
 
   def show
     @images = Image.filter(params)
+    render :index
+  end
+
+  def more
+    data = current_user.toggleLike(params[:image_id])
+    render json: data.to_json
   end
 
 end
