@@ -4,6 +4,7 @@ $(document).on('turbolinks:load', function() {
     $("body").on('click'," [data-do='like']",function (e) {
         e.preventDefault();
         var that = this;
+        var like;
         $.ajax({
             type:'POST',
             url:'/like',
@@ -13,13 +14,18 @@ $(document).on('turbolinks:load', function() {
             success:function(data){
               if(data.klass == "active"){
                   $(that).addClass(data.klass);
+                  like = true;
               }
               else{
                   $(that).removeClass("active");
+                  like = false;
               }
-              $('*[data-nbr="'+ data.image_id +'"]').text(data.number);
+            //   $('*[data-nbr="'+ data.image_id +'"]').text(data.number);
+              App.like.speak($(that).data('id'), like);
             }
           });
+
+        
     })
 
     $("body").on('click'," [data-do='more']",function (e) {
