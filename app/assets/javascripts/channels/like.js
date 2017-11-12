@@ -1,13 +1,12 @@
 App.like = App.cable.subscriptions.create("LikeChannel", {
-    connected() {},
+    connected: function() {},
       // Called when the subscription is ready for use on the server
    
-    disconnected() {},
+    disconnected: function() {},
       // Called when the subscription has been terminated by the server
    
-    received(data) {
+    received: function(data) {
       // Called when there's incoming data on the websocket for this channel
-      console.log(data.message);
       var nb_like = parseInt($('*[data-nbr="'+ data.message.image_id +'"]').text());
       if (data.message.like){
         $('*[data-nbr="'+ data.message.image_id +'"]').text(nb_like + 1);
@@ -17,7 +16,7 @@ App.like = App.cable.subscriptions.create("LikeChannel", {
       }
     },
    
-    speak(image_id, like) {
-      return this.perform('like', {image_id, like});
+    speak: function(image_id, like) {
+      return this.perform('like', {image_id: image_id, like: like});
     }
   });
