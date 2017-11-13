@@ -12,11 +12,9 @@ class Image < ApplicationRecord
 
     validates_presence_of :picture
 
-    THUMBNAIL_URL = "http://www.latorredelsol.com/press/components/com_easyblog/themes/wireframe/images/placeholder-image.png"
-
     def thumbnail
       out = picture.url
-      out = THUMBNAIL_URL unless picture.url
+      out = asset_path("placeholder-image.png") unless picture.url
 
       out
     end
