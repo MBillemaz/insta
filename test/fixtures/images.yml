@@ -79,11 +79,11 @@ image13:
 image14:
   id: 14
   picture:
-  user_id: 2
+  user_id: 3
   category_id: 5
 
 image15:
   id: 15
   picture:
-  user_id: 2
+  user_id: 3
   category_id: 5

@@ -7,3 +7,8 @@ user2:
   first_name: 'firstNameUser2'
   last_name: 'lastNameUser2'
   email: "user2@domain.com"
+
+user3:
+  first_name: 'firstNameUser3'
+  last_name: 'lastNameUser3'
+  email: "user3@domain.com"
