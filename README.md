@@ -1,24 +1,11 @@
-# README
+# Ynsta
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It's a ruby app that was inspired by Instagram.
+You can upload your own photos, and search them using tags, user name, etc.
 
-Things you may want to cover:
+Use ```bundle install``` and ```rails server```.
+Then on your browser: http://localhost:3000/
 
-* Ruby version
+To run unit tests, use ```spring rails test```.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+That app was also deployed on Heroku https://ynsta.herokuapp.com (but not the latest revision).

@@ -2,6 +2,16 @@ require 'test_helper'
 
 describe Image do
 
+  describe "UploadController" do
+
+    it "should not create image with empty params" do
+      image = Image.new()
+
+      assert_not image.save
+    end
+
+  end
+
   describe "filter" do
     it "should returns 6 order by desc images if no args" do
       out = Image.filter({})
@@ -47,6 +57,18 @@ describe Image do
     out = Image.filter({tag_id: 1})
 
     assert_equal 6, out.length
+  end
+
+  it "should returns expected images with tag search" do
+    out = Image.filter({search: "#firstTag" })
+
+    assert_equal 0, out.length
+  end
+
+  it "should returns expected images with the user search" do
+    out = Image.filter({search: "firstNameUser1"})
+
+    assert_equal 0, out.length
   end
 
 end
