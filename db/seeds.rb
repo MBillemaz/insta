@@ -12,7 +12,7 @@ ActsAsVotable::Vote.create!([
 ])
 User.create!([
   {email: "bob@bob", password: "lennon", password_confirmation: "lennon", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2017-11-12 14:02:24", last_sign_in_at: "2017-11-07 14:12:26", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "lennon", first_name: "bob"},
-  {email: "maxime.bill@hotmail.fr", password: "billy", password_confirmation: "billy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2017-11-12 14:02:33", last_sign_in_at: "2017-11-07 15:31:52", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "billemaz", first_name: "maxime"}
+  {email: "maxime.bill@hotmail.fr", password: "helloBilly", password_confirmation: "helloBilly", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2017-11-12 14:02:33", last_sign_in_at: "2017-11-07 15:31:52", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "billemaz", first_name: "maxime"}
   
 
 ])
