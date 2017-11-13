@@ -11,9 +11,13 @@ ActsAsVotable::Vote.create!([
   {votable_type: "Image", votable_id: 8, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1}
 ])
 User.create!([
-  {email: "bob@bob", encrypted_password: "$2a$11$EiDA8igIAbSRqbI1vIdv9OOJ49Qbo05blkAQYGRAaTCs4ArGp5iA.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2017-11-12 14:02:24", last_sign_in_at: "2017-11-07 14:12:26", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "lennon", first_name: "bob"},
-  {email: "maxime.bill@hotmail.fr", encrypted_password: "$2a$11$h5cL0sNFVmbnbJkt376c.elrHBoUK2O.2RPLADJ3qcvgZYIoM8fUu", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2017-11-12 14:02:33", last_sign_in_at: "2017-11-07 15:31:52", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "billemaz", first_name: "maxime"}
+  {email: "bob@bob", password: "lennon", password_confirmation: "lennon", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2017-11-12 14:02:24", last_sign_in_at: "2017-11-07 14:12:26", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "lennon", first_name: "bob"},
+  {email: "maxime.bill@hotmail.fr", password: "billy", password_confirmation: "billy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2017-11-12 14:02:33", last_sign_in_at: "2017-11-07 15:31:52", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", last_name: "billemaz", first_name: "maxime"}
+  
+
 ])
+# encrypted_password: "$2a$11$EiDA8igIAbSRqbI1vIdv9OOJ49Qbo05blkAQYGRAaTCs4ArGp5iA.",
+# encrypted_password: "$2a$11$h5cL0sNFVmbnbJkt376c.elrHBoUK2O.2RPLADJ3qcvgZYIoM8fUu"
 Category.create!([
   {name: "People"},
   {name: "Travel"},
